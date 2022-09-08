@@ -57,11 +57,11 @@ function Navbar() {
                         <div className={` md:hidden divide-y  relative  p-3  w-full text-white text-sm  ${isHover} bg-gray-800 `}
                             onMouseLeave={() => setIsHover3("hidden")}
                         >
-                            {Object.keys(brands).map((brand) => {
+                            {Object.keys(brands).map((brand, index) => {
 
                                 return (
                                     <div className=' md:hidden'
-                                    >
+                                        key={index} >
                                         <div className=' flex items-center'>
                                             <div className=' '>
                                                 <img className='w-[48px] ' src={brands[brand].logo} alt="" />
@@ -74,9 +74,9 @@ function Navbar() {
                                         </div>
                                         <div className={`relative bg-gray-600 text-lg font-mono font-thin px-6 w-[100%]  mt-[3.6%] ${isHover3 === brands[brand].name ? "" : "hidden"} border-t border-white py-2`}>
                                             <ul className='divide-y'>
-                                                {Object.keys(brands[brand].model).map((model) => {
+                                                {Object.keys(brands[brand].model).map((model, index) => {
                                                     return (
-                                                        <li className='py-2 hover:font-semibold cursor-pointer'>{brands[brand].name + " " + brands[brand].model[model].name}</li>
+                                                        <li className='py-2 hover:font-semibold cursor-pointer' key={index}>{brands[brand].name + " " + brands[brand].model[model].name}</li>
                                                     )
                                                 })}
 
@@ -102,7 +102,7 @@ function Navbar() {
                             <div className={`grid grid-cols-2 gap-8 ${isHover3 === "trending" ? "" : "hidden"}  my-3`}>
                                 {Object.keys(trending).map((index) => {
                                     return (
-                                        <div className='hover:border-b-4 hover:border-l-4 border-white '>
+                                        <div className='hover:border-b-4 hover:border-l-4 border-white ' key={index}>
                                             <img src={trending[index][1].logo} alt="" />
                                         </div>)
                                 })
@@ -118,7 +118,7 @@ function Navbar() {
                                 <ul className={` divide-y ${isHover3 === "collection" ? "" : "hidden"} bg-gray-600`}>
                                     {Object.keys(trendingCategory1).map((index) => {
                                         return (
-                                            <li className=' cursor-pointer text-base  font-thin hover:text-yellow-500 py-1'  >{trendingCategory1[index][1].name}</li>)
+                                            <li className=' cursor-pointer text-base  font-thin hover:text-yellow-500 py-1' key={index}>{trendingCategory1[index][1].name}</li>)
                                     })}
                                     {/* <li className=' cursor-pointer text-xs font-thin hover:text-yellow-500 '>&amp; Many more...</li> */}
                                 </ul>
@@ -143,10 +143,10 @@ function Navbar() {
             <div className={`px-[35%] -mt-[12vh] md:mt-0 divide-y md:divide-y-0 absolute grid grid-cols-1 md:grid-cols-4 gap-6 p-8 md:px-[11%] w-full text-white text-sm  ${isHover} md:bg-black`}
                 onMouseLeave={() => setIsHover3("hidden")}
             >
-                {Object.keys(brands).map((brand) => {
+                {Object.keys(brands).map((brand, index) => {
 
                     return (
-                        <div className='hidden md:flex '
+                        <div className='hidden md:flex ' key={index}
                         >
                             <div className=' flex items-center'>
                                 <div className='mx-2 '>
@@ -160,9 +160,9 @@ function Navbar() {
                             </div>
                             <div className={`absolute bg-black text-lg font-mono font-thin px-6 w-[19%]  mt-[3.6%] ${isHover3 === brands[brand].name ? "" : "hidden"} border py-2`}>
                                 <ul className='divide-y'>
-                                    {Object.keys(brands[brand].model).map((model) => {
+                                    {Object.keys(brands[brand].model).map((model, index) => {
                                         return (
-                                            <li className='py-2 hover:font-semibold cursor-pointer'>{brands[brand].name + " " + brands[brand].model[model].name}</li>
+                                            <li className='py-2 hover:font-semibold cursor-pointer' key={index}>{brands[brand].name + " " + brands[brand].model[model].name}</li>
                                         )
                                     })}
 
@@ -180,7 +180,7 @@ function Navbar() {
                         <ul className='mr-4'>
                             {Object.keys(trendingCategory).map((index) => {
                                 return (
-                                    <li className=' cursor-pointer text-sm font-thin hover:text-yellow-500 mb-[0.5em]'  >{trendingCategory[index][1].name}</li>)
+                                    <li className=' cursor-pointer text-sm font-thin hover:text-yellow-500 mb-[0.5em]' key={index} >{trendingCategory[index][1].name}</li>)
                             })}
                             <li className=' cursor-pointer text-xs font-thin hover:text-yellow-500 '>&amp; Many more...</li>
                         </ul>
@@ -193,7 +193,7 @@ function Navbar() {
                     <div className='grid grid-cols-4 gap-3'>
                         {Object.keys(trending).map((index) => {
                             return (
-                                <div className='hover:border-b-4 hover:border-l-4 border-white '>
+                                <div className='hover:border-b-4 hover:border-l-4 border-white ' key={index}>
                                     <img src={trending[index][1].logo} alt="" />
                                 </div>)
                         })
