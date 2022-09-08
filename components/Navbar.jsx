@@ -39,7 +39,7 @@ function Navbar() {
             <nav className='md:flex justify-between md:px-4 lg:px-8 items-center py-3 bg-black text-white border-b border-gray-300 font-mono'>
                 <div className='flex justify-between items-center'>
                     <div className='md:hidden' onClick={() => isHover3 === "menu" ? "bob" : setIsHover3("menu")}>
-                        <i class='bx bx-menu text-5xl'></i>
+                        <i className='bx bx-menu text-5xl'></i>
                     </div>
                     <div className='text-5xl md:text-4xl lg:text-5xl'>
                         <h1 className='md-ml-2 lg:ml-5'>wrap</h1>
