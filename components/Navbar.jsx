@@ -38,7 +38,7 @@ function Navbar() {
         >
             <nav className='md:flex justify-between md:px-4 lg:px-8 items-center py-3 bg-black text-white border-b border-gray-300 font-mono'>
                 <div className='flex justify-between items-center'>
-                    <div className='md:hidden' onClick={() => isHover3 === "menu" ? "bob" : setIsHover3("menu")}>
+                    <div className='md:hidden' onClick={() => isHover3 === "menu" ? setIsHover3("") : setIsHover3("menu")}>
                         <i className='bx bx-menu text-5xl'></i>
                     </div>
                     <div className='text-5xl md:text-4xl lg:text-5xl'>
@@ -56,6 +56,7 @@ function Navbar() {
                         <a href='#' className='px-2  lg:px-4'>Select Device <i className='bx bx-chevron-down'></i></a>
                         <div className={` md:hidden divide-y  relative  p-3  w-full text-white text-sm  ${isHover} bg-gray-800 `}
                             onMouseLeave={() => setIsHover3("hidden")}
+                            onClick={() => setIsHover3("hidden")}
                         >
                             {Object.keys(brands).map((brand, index) => {
 
@@ -68,7 +69,9 @@ function Navbar() {
                                             </div>
                                             <div className='text-left ml-4'>
                                                 <p className='hover:font-semibold'
-                                                    onMouseEnter={() => setIsHover3(brands[brand].name)}>{brands[brand].name}</p>
+                                                    onMouseEnter={() => setIsHover3(brands[brand].name)}
+                                                    onClick={() => setIsHover3(brands[brand].name)}
+                                                >{brands[brand].name}</p>
                                                 <p className='font-thin'>{brands[brand].description}</p>
                                             </div>
                                         </div>
@@ -96,7 +99,9 @@ function Navbar() {
                     <div className={`relative px-[10%] w-full bg-gray-800 text-white text-sm justify-around divide-y ${isHover2} md:hidden`}>
                         <div className='block  '>
                             <p className='text-lg pt-2 pb-1 font-base text-white  w-auto'
-                                onMouseEnter={() => setIsHover3("trending")}>
+                                onMouseEnter={() => setIsHover3("trending")}
+                                onClick={() => setIsHover3("trending")}
+                            >
                                 Most Trending
                             </p>
                             <div className={`grid grid-cols-2 gap-8 ${isHover3 === "trending" ? "" : "hidden"}  my-3`}>
@@ -111,7 +116,9 @@ function Navbar() {
                         </div>
                         <div className=' pb-2 pt-1 text-lg font-mono text-white font-thin   '>
                             <p className='font-base text-lg '
-                                onMouseEnter={() => setIsHover3("collection")}>
+                                onMouseEnter={() => setIsHover3("collection")}
+                                onClick={() => setIsHover3("collection")}
+                            >
                                 Collection
                             </p>
                             <div className='grid grid-cols-1  text-gray-300  text-center mt-4'>
