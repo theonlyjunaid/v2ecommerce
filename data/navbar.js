@@ -218,5 +218,13 @@ export const categories = {
         name: 'CARBON FIBER',
         logo: 'https://cdn.shopify.com/s/files/1/0534/7849/0267/files/WrapCart-Img-1270_Carbon_Fibre_1024x1024_crop_center_c0c74b03-e157-439f-ac5a-22103d871fcc.jpg?v=1628724759',
     },
+    stone1: {
+        name: 'STONE',
+        logo: 'https://cdn.shopify.com/s/files/1/0534/7849/0267/files/WrapCart-Img-1260_Stone_1024x1024_crop_center_8b8b2b8a-5b8f-4b8f-8b8a-8b8b2b8a5b8f.jpg?v=1628724795',
+    },
+    carbonfiber2: {
+        name: 'CARBON FIBER',
+        logo: 'https://cdn.shopify.com/s/files/1/0534/7849/0267/files/WrapCart-Img-1270_Carbon_Fibre_1024x1024_crop_center_c0c74b03-e157-439f-ac5a-22103d871fcc.jpg?v=1628724759',
+    },
 
 }

@@ -7,8 +7,7 @@ function Navbar() {
 
     const trending = Object.entries(categories).slice(0, 4)
     const trendingCategory = Object.entries(categories).slice(0, 7)
-
-    const num1 = [1, 2, 3, 4, 5, 6, 7, 8]
+    const trendingCategory1 = Object.entries(categories)
     const [isHover, setIsHover] = useState("hidden");
     const [isHover2, setIsHover2] = useState("hidden");
     const [isHover3, setIsHover3] = useState("hidden");
@@ -39,7 +38,7 @@ function Navbar() {
         >
             <nav className='md:flex justify-between md:px-4 lg:px-8 items-center py-3 bg-black text-white border-b border-gray-300 font-mono'>
                 <div className='flex justify-between items-center'>
-                    <div className='md:hidden'>
+                    <div className='md:hidden' onClick={() => isHover3 === "menu" ? "bob" : setIsHover3("menu")}>
                         <i class='bx bx-menu text-5xl'></i>
                     </div>
                     <div className='text-5xl md:text-4xl lg:text-5xl'>
@@ -49,7 +48,7 @@ function Navbar() {
                         <i className='bx bx-cart-alt ' ></i>
                     </div>
                 </div>
-                <div className='text-center md:flex text-lg  lg:text-base xl:text-xl font-semib md:items-center'>
+                <div className={`text-center md:flex text-lg  lg:text-base xl:text-xl font-semib md:items-center ${isHover3 === "menu" ? "" : "hidden"} `}>
                     <div className='md:item-center my-4'
                         onMouseEnter={() => setIsHover(show)}
                         onClick={() => setIsHover(show)}
@@ -93,6 +92,39 @@ function Navbar() {
                         onMouseEnter={() => setIsHover2(show2)}
                         onClick={() => setIsHover2(show2)}>
                         <a href='#' className='px-2 lg:px-4'>Skin Collection <i className='bx bx-chevron-down '></i></a>
+                    </div>
+                    <div className={`relative px-[10%] w-full bg-gray-800 text-white text-sm justify-around divide-y ${isHover2} md:hidden`}>
+                        <div className='block  '>
+                            <p className='text-lg pt-2 pb-1 font-base text-white  w-auto'
+                                onMouseEnter={() => setIsHover3("trending")}>
+                                Most Trending
+                            </p>
+                            <div className={`grid grid-cols-2 gap-8 ${isHover3 === "trending" ? "" : "hidden"}  my-3`}>
+                                {Object.keys(trending).map((index) => {
+                                    return (
+                                        <div className='hover:border-b-4 hover:border-l-4 border-white '>
+                                            <img src={trending[index][1].logo} alt="" />
+                                        </div>)
+                                })
+                                }
+                            </div>
+                        </div>
+                        <div className=' pb-2 pt-1 text-lg font-mono text-white font-thin   '>
+                            <p className='font-base text-lg '
+                                onMouseEnter={() => setIsHover3("collection")}>
+                                Collection
+                            </p>
+                            <div className='grid grid-cols-1  text-gray-300  text-center mt-4'>
+                                <ul className={` divide-y ${isHover3 === "collection" ? "" : "hidden"} bg-gray-600`}>
+                                    {Object.keys(trendingCategory1).map((index) => {
+                                        return (
+                                            <li className=' cursor-pointer text-base  font-thin hover:text-yellow-500 py-1'  >{trendingCategory1[index][1].name}</li>)
+                                    })}
+                                    {/* <li className=' cursor-pointer text-xs font-thin hover:text-yellow-500 '>&amp; Many more...</li> */}
+                                </ul>
+                            </div>
+                        </div>
+
                     </div>
 
                     <div>
