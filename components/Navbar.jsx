@@ -11,6 +11,7 @@ function Navbar() {
     const [isHover, setIsHover] = useState("hidden");
     const [isHover2, setIsHover2] = useState("hidden");
     const [isHover3, setIsHover3] = useState("hidden");
+    const [isHover4, setIsHover4] = useState("hidden");
     const show = () => {
         if (isHover === "hidden") {
             setIsHover("block");
@@ -55,8 +56,8 @@ function Navbar() {
                     >
                         <a href='#' className='px-2  lg:px-4'>Select Device <i className='bx bx-chevron-down'></i></a>
                         <div className={` md:hidden divide-y  relative  p-3  w-full text-white text-sm  ${isHover} bg-gray-800 `}
-                            onMouseLeave={() => setIsHover3("hidden")}
-                            onClick={() => setIsHover3("hidden")}
+                            onMouseLeave={() => setIsHover4("hidden")}
+                            onClick={() => setIsHover4("hidden")}
                         >
                             {Object.keys(brands).map((brand, index) => {
 
@@ -69,13 +70,13 @@ function Navbar() {
                                             </div>
                                             <div className='text-left ml-4'>
                                                 <p className='hover:font-semibold'
-                                                    onMouseEnter={() => setIsHover3(brands[brand].name)}
-                                                    onClick={() => setIsHover3(brands[brand].name)}
+                                                    onMouseEnter={() => setIsHover4(brands[brand].name)}
+                                                    onClick={() => setIsHover4(brands[brand].name)}
                                                 >{brands[brand].name}</p>
                                                 <p className='font-thin'>{brands[brand].description}</p>
                                             </div>
                                         </div>
-                                        <div className={`relative bg-gray-600 text-lg font-mono font-thin px-6 w-[100%]  mt-[3.6%] ${isHover3 === brands[brand].name ? "" : "hidden"} border-t border-white py-2`}>
+                                        <div className={`relative bg-gray-600 text-lg font-mono font-thin px-6 w-[100%]  mt-[3.6%] ${isHover4 === brands[brand].name ? "" : "hidden"} border-t border-white py-2`}>
                                             <ul className='divide-y'>
                                                 {Object.keys(brands[brand].model).map((model, index) => {
                                                     return (
@@ -99,12 +100,12 @@ function Navbar() {
                     <div className={`relative px-[10%] w-full bg-gray-800 text-white text-sm justify-around divide-y ${isHover2} md:hidden`}>
                         <div className='block  '>
                             <p className='text-lg pt-2 pb-1 font-base text-white  w-auto'
-                                onMouseEnter={() => setIsHover3("trending")}
-                                onClick={() => setIsHover3("trending")}
+                                onMouseEnter={() => setIsHover4("trending")}
+                                onClick={() => setIsHover4("trending")}
                             >
                                 Most Trending
                             </p>
-                            <div className={`grid grid-cols-2 gap-8 ${isHover3 === "trending" ? "" : "hidden"}  my-3`}>
+                            <div className={`grid grid-cols-2 gap-8 ${isHover4 === "trending" ? "" : "hidden"}  my-3`}>
                                 {Object.keys(trending).map((index) => {
                                     return (
                                         <div className='hover:border-b-4 hover:border-l-4 border-white ' key={index}>
@@ -116,13 +117,13 @@ function Navbar() {
                         </div>
                         <div className=' pb-2 pt-1 text-lg font-mono text-white font-thin   '>
                             <p className='font-base text-lg '
-                                onMouseEnter={() => setIsHover3("collection")}
-                                onClick={() => setIsHover3("collection")}
+                                onMouseEnter={() => setIsHover4("collection")}
+                                onClick={() => setIsHover4("collection")}
                             >
                                 Collection
                             </p>
                             <div className='grid grid-cols-1  text-gray-300  text-center mt-4'>
-                                <ul className={` divide-y ${isHover3 === "collection" ? "" : "hidden"} bg-gray-600`}>
+                                <ul className={` divide-y ${isHover4 === "collection" ? "" : "hidden"} bg-gray-600`}>
                                     {Object.keys(trendingCategory1).map((index) => {
                                         return (
                                             <li className=' cursor-pointer text-base  font-thin hover:text-yellow-500 py-1' key={index}>{trendingCategory1[index][1].name}</li>)
