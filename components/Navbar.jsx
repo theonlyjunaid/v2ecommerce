@@ -30,51 +30,91 @@ function Navbar() {
     }
     return (
         <div className=''
-            onMouseLeave={() => {
-                setIsHover("hidden")
-                setIsHover2("hidden")
-                setIsHover3("hidden")
-            }}
+        // onMouseLeave={() => {
+        //     setIsHover("hidden")
+        //     setIsHover2("hidden")
+        //     setIsHover3("hidden")
+        // }}
 
         >
-            <nav className='flex justify-between md:px-4 lg:px-8 items-center py-3 bg-black text-white border-b border-gray-300 font-mono'>
-                <div className='text-5xl'>
-                    <h1 className='md-ml-2 lg:ml-5'>MZArt</h1>
+            <nav className='md:flex justify-between md:px-4 lg:px-8 items-center py-3 bg-black text-white border-b border-gray-300 font-mono'>
+                <div className='flex justify-between items-center'>
+                    <div className='md:hidden'>
+                        <i class='bx bx-menu text-5xl'></i>
+                    </div>
+                    <div className='text-5xl md:text-4xl lg:text-5xl'>
+                        <h1 className='md-ml-2 lg:ml-5'>wrap</h1>
+                    </div>
+                    <div className=' md:hidden text-5xl'>
+                        <i className='bx bx-cart-alt ' ></i>
+                    </div>
                 </div>
-                <div className='flex text-sm lg:text-base xl:text-xl font-semib'>
-                    <div className='item-center'
+                <div className='text-center md:flex text-lg  lg:text-base xl:text-xl font-semib md:items-center'>
+                    <div className='md:item-center my-4'
                         onMouseEnter={() => setIsHover(show)}
                         onClick={() => setIsHover(show)}
                     >
                         <a href='#' className='px-2  lg:px-4'>Select Device <i className='bx bx-chevron-down'></i></a>
+                        <div className={` md:hidden divide-y  relative  p-3  w-full text-white text-sm  ${isHover} bg-gray-800 `}
+                            onMouseLeave={() => setIsHover3("hidden")}
+                        >
+                            {Object.keys(brands).map((brand) => {
 
+                                return (
+                                    <div className=' md:hidden'
+                                    >
+                                        <div className=' flex items-center'>
+                                            <div className=' '>
+                                                <img className='w-[48px] ' src={brands[brand].logo} alt="" />
+                                            </div>
+                                            <div className='text-left ml-4'>
+                                                <p className='hover:font-semibold'
+                                                    onMouseEnter={() => setIsHover3(brands[brand].name)}>{brands[brand].name}</p>
+                                                <p className='font-thin'>{brands[brand].description}</p>
+                                            </div>
+                                        </div>
+                                        <div className={`relative bg-gray-600 text-lg font-mono font-thin px-6 w-[100%]  mt-[3.6%] ${isHover3 === brands[brand].name ? "" : "hidden"} border-t border-white py-2`}>
+                                            <ul className='divide-y'>
+                                                {Object.keys(brands[brand].model).map((model) => {
+                                                    return (
+                                                        <li className='py-2 hover:font-semibold cursor-pointer'>{brands[brand].name + " " + brands[brand].model[model].name}</li>
+                                                    )
+                                                })}
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                )
+                            })
+                            }
+                        </div>
                     </div>
-                    <div className='item-center'
+                    <div className='item-center my-4'
                         onMouseEnter={() => setIsHover2(show2)}
                         onClick={() => setIsHover2(show2)}>
                         <a href='#' className='px-2 lg:px-4'>Skin Collection <i className='bx bx-chevron-down '></i></a>
                     </div>
 
                     <div>
-                        <a href='#' className='px-2 lg:px-4'>FAQs</a>
+                        <a href='#' className='px-2 lg:px-4 my-4'>FAQs</a>
                     </div>
                     <div>
-                        <a href='#' className='px-2 lg:px-4'>Device Not Found</a>
+                        <a href='#' className='px-2 lg:px-4 my-4'>Device Not Found</a>
                     </div>
                 </div>
                 <div className='grid grid-cols-3 gap-5  text-xl'>
-                    <i className='bx bx-search'></i>
-                    <i className='bx bx-user'></i>
-                    <i className='bx bx-cart-alt' ></i>
+                    {/* <i className='bx bx-search'></i> */}
+                    <i className='bx bx-user hidden md:flex'></i>
+                    <i className='bx bx-cart-alt hidden md:flex' ></i>
                 </div>
             </nav >
-            <div className={`absolute grid grid-cols-4 gap-6 p-8 px-[11%] w-full text-white text-sm iten ${isHover} bg-black`}
+            <div className={`px-[35%] -mt-[12vh] md:mt-0 divide-y md:divide-y-0 absolute grid grid-cols-1 md:grid-cols-4 gap-6 p-8 md:px-[11%] w-full text-white text-sm  ${isHover} md:bg-black`}
                 onMouseLeave={() => setIsHover3("hidden")}
             >
                 {Object.keys(brands).map((brand) => {
 
                     return (
-                        <div className='flex'
+                        <div className='hidden md:flex '
                         >
                             <div className=' flex items-center'>
                                 <div className='mx-2 '>
@@ -101,7 +141,7 @@ function Navbar() {
                 })
                 }
             </div>
-            <div className={`absolute flex px-[10%] w-full bg-black text-white text-sm justify-around ${isHover2}`}>
+            <div className={`absolute md:flex px-[10%] w-full bg-black text-white text-sm justify-around hidden md:${isHover2}`}>
                 <div className='grid grid-cols-1  text-lg font-mono text-white font-thin my-6 py-4 '>
                     <p className='font-bold border-b border-white mb-2'>Collection</p>
                     <div className='grid grid-cols-1  text-gray-300 pl-3'>
