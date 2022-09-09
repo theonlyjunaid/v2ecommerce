@@ -14,7 +14,7 @@ function Navbar() {
     const [isHover4, setIsHover4] = useState("hidden");
     console.log(isHover)
     console.log(isHover2)
-    console.log(isHover3)
+    console.log(isHover3 + 1)
     console.log(isHover4)
     const show = () => {
         if (isHover === "hidden") {
@@ -43,19 +43,17 @@ function Navbar() {
             <nav className='md:flex justify-between md:px-4 lg:px-8 items-center py-3 bg-black text-white border-b border-gray-300 font-mono'>
                 <div className='flex justify-between items-center'>
                     <div className='md:hidden' onClick={() => isHover3 === "menu" ? setIsHover3("") : setIsHover3("menu")}>
-                        <i className='bx bx-menu text-5xl'></i>
+                        <i className='bx bx-menu text-4xl pl-1  font-base'></i>
                     </div>
                     <div className='text-5xl md:text-4xl lg:text-5xl'>
                         <h1 className='md-ml-2 lg:ml-5'>wrap</h1>
                     </div>
-                    <div className=' md:hidden text-5xl'>
-                        <i className='bx bx-cart-alt ' ></i>
+                    <div className=' md:hidden text-4xl'>
+                        <i className='bx bx-cart-alt pr-2  font-base' ></i>
                     </div>
                 </div>
                 <div className={`text-center md:flex text-lg  lg:text-base xl:text-xl font-semib md:items-center ${isHover3 === "menu" ? "" : "hidden"} `}>
-                    <div className='md:item-center my-4'
-
-                    >
+                    <div className='md:item-center my-4'    >
                         <a href='#' className='px-2  lg:px-4' onMouseEnter={() => setIsHover(show)}
                             onClick={() => setIsHover(show)}>Select Device <i className='bx bx-chevron-down'></i></a>
                         <div className={` md:hidden divide-y  relative  p-3  w-full text-white text-sm  ${isHover} bg-gray-800 `}
@@ -131,7 +129,6 @@ function Navbar() {
                                         return (
                                             <li className=' cursor-pointer text-base  font-thin hover:text-yellow-500 py-1' key={index}>{trendingCategory1[index][1].name}</li>)
                                     })}
-                                    {/* <li className=' cursor-pointer text-xs font-thin hover:text-yellow-500 '>&amp; Many more...</li> */}
                                 </ul>
                             </div>
                         </div>
@@ -152,7 +149,7 @@ function Navbar() {
                 </div>
             </nav >
             <div className={`px-[35%] -mt-[12vh] md:mt-0 divide-y md:divide-y-0 absolute grid grid-cols-1 md:grid-cols-4 gap-6 p-8 md:px-[11%] w-full text-white text-sm  ${isHover} md:bg-black`}
-                onMouseLeave={() => setIsHover3("hidden")}
+                onMouseLeave={() => setIsHover("hidden")}
             >
                 {Object.keys(brands).map((brand, index) => {
 
