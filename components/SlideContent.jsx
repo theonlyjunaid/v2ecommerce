@@ -8,7 +8,7 @@ export default function SlideContent(props) {
                 <div className='w-[50%]  float-right text-left '>
                     <p className='text-2xl md:text-7xl font-mono font-base md:font-semibold text-green-500'>Samsung</p>
                     <p className='md:text-4xl'>This is the new mobile</p>
-                    <p className='px-3 py-1 rounded-2xl my-1 w-[85px] md:w-[180px] md:text-4xl bg-green-500'>Buy Now</p>
+                    <p className='px-3 py-1 rounded-2xl my-1 max-w-max md:w-[180px] md:text-4xl bg-green-500 shadow-xl'>Buy Now</p>
                 </div>
             </div>
         </div>
