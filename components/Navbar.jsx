@@ -12,6 +12,10 @@ function Navbar() {
     const [isHover2, setIsHover2] = useState("hidden");
     const [isHover3, setIsHover3] = useState("hidden");
     const [isHover4, setIsHover4] = useState("hidden");
+    console.log(isHover)
+    console.log(isHover2)
+    console.log(isHover3)
+    console.log(isHover4)
     const show = () => {
         if (isHover === "hidden") {
             setIsHover("block");
@@ -35,7 +39,6 @@ function Navbar() {
         //     setIsHover2("hidden")
         //     setIsHover3("hidden")
         // }}
-
         >
             <nav className='md:flex justify-between md:px-4 lg:px-8 items-center py-3 bg-black text-white border-b border-gray-300 font-mono'>
                 <div className='flex justify-between items-center'>
@@ -51,13 +54,13 @@ function Navbar() {
                 </div>
                 <div className={`text-center md:flex text-lg  lg:text-base xl:text-xl font-semib md:items-center ${isHover3 === "menu" ? "" : "hidden"} `}>
                     <div className='md:item-center my-4'
-                        onMouseEnter={() => setIsHover(show)}
-                        onClick={() => setIsHover(show)}
+
                     >
-                        <a href='#' className='px-2  lg:px-4'>Select Device <i className='bx bx-chevron-down'></i></a>
+                        <a href='#' className='px-2  lg:px-4' onMouseEnter={() => setIsHover(show)}
+                            onClick={() => setIsHover(show)}>Select Device <i className='bx bx-chevron-down'></i></a>
                         <div className={` md:hidden divide-y  relative  p-3  w-full text-white text-sm  ${isHover} bg-gray-800 `}
                             onMouseLeave={() => setIsHover4("hidden")}
-                            onClick={() => setIsHover4("hidden")}
+
                         >
                             {Object.keys(brands).map((brand, index) => {
 
@@ -93,9 +96,9 @@ function Navbar() {
                         </div>
                     </div>
                     <div className='item-center my-4'
-                        onMouseEnter={() => setIsHover2(show2)}
-                        onClick={() => setIsHover2(show2)}>
-                        <a href='#' className='px-2 lg:px-4'>Skin Collection <i className='bx bx-chevron-down '></i></a>
+                    >
+                        <a href='#' className='px-2 lg:px-4' onMouseEnter={() => setIsHover2(show2)}
+                            onClick={() => setIsHover2(show2)}>Skin Collection <i className='bx bx-chevron-down '></i></a>
                     </div>
                     <div className={`relative px-[10%] w-full bg-gray-800 text-white text-sm justify-around divide-y ${isHover2} md:hidden`}>
                         <div className='block  '>
