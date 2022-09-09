@@ -12,10 +12,10 @@ function Navbar() {
     const [isHover2, setIsHover2] = useState("hidden");
     const [isHover3, setIsHover3] = useState("hidden");
     const [isHover4, setIsHover4] = useState("hidden");
-    console.log(isHover)
-    console.log(isHover2)
-    console.log(isHover3 + 1)
-    console.log(isHover4)
+    // console.log(isHover)
+    // console.log(isHover2)
+    // console.log(isHover3 + 1)
+    // console.log(isHover4)
     const show = () => {
         if (isHover === "hidden") {
             setIsHover("block");
@@ -148,7 +148,7 @@ function Navbar() {
                     <i className='bx bx-cart-alt hidden md:flex' ></i>
                 </div>
             </nav >
-            <div className={`px-[35%] -mt-[12vh] md:mt-0 divide-y md:divide-y-0 absolute grid grid-cols-1 md:grid-cols-4 gap-6 p-8 md:px-[11%] w-full text-white text-sm  ${isHover} md:bg-black`}
+            <div className={`px-[35%] -mt-[12vh] md:mt-0 divide-y md:divide-y-0 relative grid grid-cols-1 md:grid-cols-4 gap-6 p-8 md:px-[11%] w-full text-white text-sm  ${isHover} md:bg-black`}
                 onMouseLeave={() => setIsHover("hidden")}
             >
                 {Object.keys(brands).map((brand, index) => {
@@ -181,7 +181,7 @@ function Navbar() {
                 })
                 }
             </div>
-            <div className={`absolute md:flex px-[10%] w-full bg-black text-white text-sm justify-around hidden md:${isHover2}`}>
+            <div className={` md:flex px-[10%] w-full bg-black text-white text-sm justify-around hidden md:${isHover2}`}>
                 <div className='grid grid-cols-1  text-lg font-mono text-white font-thin my-6 py-4 '>
                     <p className='font-bold border-b border-white mb-2'>Collection</p>
                     <div className='grid grid-cols-1  text-gray-300 pl-3'>
