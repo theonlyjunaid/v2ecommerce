@@ -1,5 +1,13 @@
+import { useRouter } from 'next/router';
 import React, { useState } from 'react'
+
+
+
 export default function ItemComponent() {
+    const router = useRouter()
+    const fileId = router.query.slug
+    console.log(fileId)
+
     const [image, setImage] = useState('https://cdn.shopify.com/s/files/1/0602/9334/9613/files/01-01_600x.jpg');
     const [iphone, setIphone] = useState("https://cdn.shopify.com/s/files/1/0602/9334/9613/products/Xiaomi-Redmi-Note-9-Pro-Max_Color__Champagne-Gold.png?v=1661601361");
     const [iphonepic, setIphonepic] = useState("https://cdn.shopify.com/s/files/1/0602/9334/9613/products/Xiaomi-Redmi-Note-9-Pro-Max-back.png?v=1661601360");
