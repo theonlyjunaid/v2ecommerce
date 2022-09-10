@@ -27,7 +27,7 @@ export default function ItemComponent() {
                 >Redmi</p>
             </div>
             <div className='' style={{ backgroundImage: "url(" + iphone + ")", backgroundRepeat: 'no-repeat', color: { iphone } }}>
-                <div class="mask1">
+                <div className="mask1">
                     <img src={image} alt="Cinque Terre" style={{ webkitMaskImage: "url(" + iphonepic + ")" }} className='h-[800px]' />
                 </div>
                 <div>
