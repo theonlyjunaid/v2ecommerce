@@ -166,7 +166,7 @@ function Navbar() {
                                     <p className='font-thin'>{brands[brand].description}</p>
                                 </div>
                             </div>
-                            <div className={`absolute bg-black text-lg font-mono font-thin px-6 w-[19%]  mt-[3.6%] ${isHover3 === brands[brand].name ? "" : "hidden"} border py-2`}>
+                            <div className={`fixed bg-black text-lg font-mono font-thin px-6 w-[19%]  mt-[3.6%] ${isHover3 === brands[brand].name ? "" : "hidden"} border py-2`}>
                                 <ul className='divide-y'>
                                     {Object.keys(brands[brand].model).map((model, index) => {
                                         return (
