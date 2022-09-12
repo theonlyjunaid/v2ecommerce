@@ -18,7 +18,7 @@ export default function ItemComponent() {
     return (
         <div className='bg-gray-600 grid grid-cols-1 md:grid-cols-2 '>
 
-            <div style={{ backgroundImage: "url(" + iphone + ")", backgroundRepeat: 'no-repeat' }} className='-ml-[43%] md:ml-0 scale-50 -mt-20 border'>
+            <div style={{ backgroundImage: "url(" + iphone + ")", backgroundRepeat: 'no-repeat' }} className='-ml-[32%] md:ml-0 scale-50 -mt-20 border'>
                 <div className='w-screen/2'  >
                     <img src={image} alt="Cinque Terre" style={{ webkitMaskImage: "url(" + iphonepic + ")", WebkitMaskRepeat: 'no-repeat' }} className=' h-screen ' />
                 </div>
