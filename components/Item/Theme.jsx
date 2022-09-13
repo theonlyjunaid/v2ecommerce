@@ -14,15 +14,15 @@ function Theme() {
                 <h1 className='text-3xl  font-semibold mx-2'>Customize Skin</h1>
                 <div className=''>
                     {
-                        Object.keys(theme).map((item) => {
+                        Object.keys(theme).map((item, index) => {
                             return (
-                                <div className='my-4 mx-2'>
+                                <div className='my-4 mx-2' key={index}>
                                     <h1 className='text-2xl font-mono font-semibold'>{item}</h1>
                                     <div className='grid grid-cols-4 gap-6'>
                                         {
-                                            theme[item].map((item) => {
+                                            theme[item].map((item, index) => {
                                                 return (
-                                                    <div className='w-[50px] '>
+                                                    <div className='w-[50px] ' key={index}>
                                                         <img src={item.URL} alt="" onClick={() => setImage(item.URL)} />
                                                     </div>
                                                 )
