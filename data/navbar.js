@@ -103,7 +103,7 @@ export const brands = {
             iPhone13ProMax: {
                 name: 'iPhone 13 Pro Max',
                 price: 1000,
-                image: 'https://www.gizmochina.com/wp-content/uploads/2021/09/Apple-iPhone-13-Pro-Max-1.jpg'
+                image: '/Item/iphone-13-pro-max'
             }
         }
     },

@@ -2,10 +2,12 @@ export const theme = {
     DarkCollection: [{
         name: 'Black Fluid',
         URL: 'https://cdn.shopify.com/s/files/1/0602/9334/9613/files/ccc_1_600x.jpg'
-    }, {
+    },
+    {
         name: 'Black lava',
         URL: 'https://cdn.shopify.com/s/files/1/0602/9334/9613/files/camo_b85dc001-1b18-4181-8515-f6c441e4b54f_600x.jpg'
-    }, {
+    },
+    {
         name: 'Black Leather',
         URL: 'https://cdn.shopify.com/s/files/1/0602/9334/9613/files/02-01_600x.jpg'
     }],

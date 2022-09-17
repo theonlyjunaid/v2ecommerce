@@ -3,7 +3,7 @@ import React from 'react'
 export default function SlideContent(props) {
     return (
         <div className=''>
-            <div className="py-[14%] md:py-[17%] goga h-[30vh] md:h-[80vh]">
+            <div className="py-[14%] md:py-[17%] goga ">
                 1
                 <div className='w-[50%]  float-right text-left '>
                     <p className='text-2xl md:text-7xl font-mono font-base md:font-semibold text-green-500'>Samsung</p>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { brands, categories } from '../data/navbar';
+import Link from 'next/link';
 
 
 
@@ -12,10 +13,6 @@ function Navbar() {
     const [isHover2, setIsHover2] = useState("hidden");
     const [isHover3, setIsHover3] = useState("hidden");
     const [isHover4, setIsHover4] = useState("hidden");
-    // console.log(isHover)
-    // console.log(isHover2)
-    // console.log(isHover3 + 1)
-    // console.log(isHover4)
     const show = () => {
         if (isHover === "hidden") {
             setIsHover("block");
@@ -46,7 +43,7 @@ function Navbar() {
                         <i className='bx bx-menu text-4xl pl-1  font-base'></i>
                     </div>
                     <div className='text-5xl md:text-4xl lg:text-5xl'>
-                        <h1 className='md-ml-2 lg:ml-5'>wrap</h1>
+                        <Link href="/"><a > <h1 className='md-ml-2 lg:ml-5'>wrap</h1></a></Link>
                     </div>
                     <div className=' md:hidden text-4xl'>
                         <i className='bx bx-cart-alt pr-2  font-base' ></i>
@@ -148,7 +145,7 @@ function Navbar() {
                     <i className='bx bx-cart-alt hidden md:flex' ></i>
                 </div>
             </nav >
-            <div className={`px-[35%] -mt-[12vh] md:mt-0 divide-y md:divide-y-0 relative grid grid-cols-1 md:grid-cols-4 gap-6 p-8 md:px-[11%] w-full text-white text-sm  ${isHover} md:bg-black`}
+            <div className={`px-[35%] -mt-[12vh] md:mt-0 divide-y md:divide-y-0 absolute z-20 grid grid-cols-1 md:grid-cols-4 gap-6 p-8 md:px-[11%] w-full text-white text-sm  ${isHover} md:bg-black`}
                 onMouseLeave={() => setIsHover("hidden")}
             >
                 {Object.keys(brands).map((brand, index) => {
@@ -166,11 +163,12 @@ function Navbar() {
                                     <p className='font-thin'>{brands[brand].description}</p>
                                 </div>
                             </div>
-                            <div className={`fixed bg-black text-lg font-mono font-thin px-6 w-[19%]  mt-[3.6%] ${isHover3 === brands[brand].name ? "" : "hidden"} border py-2`}>
+                            <div className={`absolute z-10 bg-black text-lg font-mono font-thin px-6 w-[19%]  mt-[3.6%] ${isHover3 === brands[brand].name ? "" : "hidden"} border py-2`}>
                                 <ul className='divide-y'>
                                     {Object.keys(brands[brand].model).map((model, index) => {
+                                        // console.log(brands[brand].model[model].name.split(" ").join("-").toLowerCase())
                                         return (
-                                            <li className='py-2 hover:font-semibold cursor-pointer' key={index}>{brands[brand].name + " " + brands[brand].model[model].name}</li>
+                                            <li> <Link className='py-2 hover:font-semibold cursor-pointer' key={index} href={"/" + "Item" + "/" + brands[brand].model[model].name.split(" ").join("-").toLowerCase()}><a >{brands[brand].name + " " + brands[brand].model[model].name}</a></Link></li>
                                         )
                                     })}
 
@@ -181,7 +179,7 @@ function Navbar() {
                 })
                 }
             </div>
-            <div className={` md:flex px-[10%] w-full bg-black text-white text-sm justify-around hidden md:${isHover2}`}>
+            <div className={`absolute z-20 md:flex px-[10%] w-full bg-black text-white text-sm justify-around hidden md:${isHover2}`}>
                 <div className='grid grid-cols-1  text-lg font-mono text-white font-thin my-6 py-4 '>
                     <p className='font-bold border-b border-white mb-2'>Collection</p>
                     <div className='grid grid-cols-1  text-gray-300 pl-3'>
