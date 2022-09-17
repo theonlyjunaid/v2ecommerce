@@ -1,11 +1,10 @@
 import React from 'react'
 import { useRouter } from 'next/router'
 // import Footer from '../../components/Footer'
-
 import Theme from '../../../components/Item/Theme'
 import Navbar from '../../../components/Navbar'
 
-export default function slug() {
+export default function Slug() {
     const { query } = useRouter()
     // console.log(query.design)
     // console.log(fileId)
