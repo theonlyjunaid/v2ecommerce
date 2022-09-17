@@ -4,14 +4,14 @@ import Navbar from '../../components/Navbar'
 import { mobile } from '../../data/mobile'
 import Populated from '../../components/PopulatedItem/Populated'
 import { theme } from '../../data/design'
-import Image from 'next/image'
+
 
 
 function index() {
-    console.log(theme.Satrang[0].URL)
+    // console.log(theme.Satrang[0].URL)
     const { query } = useRouter()
-    console.log(query.model)
-    console.log(mobile.Samsung.model['S20 Ultra'].back)
+    // console.log(query.model)
+    // console.log(mobile.Samsung.model['S20 Ultra'].back)
     return (
         <>
             <Navbar />

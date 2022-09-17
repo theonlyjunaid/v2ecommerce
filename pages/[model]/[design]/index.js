@@ -7,7 +7,7 @@ import Navbar from '../../../components/Navbar'
 
 export default function slug() {
     const { query } = useRouter()
-    console.log(query.design)
+    // console.log(query.design)
     // console.log(fileId)
     return (
         <div>
