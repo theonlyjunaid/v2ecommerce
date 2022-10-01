@@ -34,5 +34,9 @@ export const theme = {
             name: 'Red Satrang',
             URL: 'https://cdn.shopify.com/s/files/1/0602/9334/9613/files/02-01_2_600x.jpg'
         },
+        {
+            name: 'Black Satrang',
+            URL: '/jadu.jpg'
+        }
     ]
 };

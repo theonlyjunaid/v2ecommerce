@@ -2,23 +2,27 @@ import React, { useState, useEffect } from 'react'
 import ItemComponent from './ItemComponent'
 import { theme } from '../../data/design'
 import { mobile } from '../../data/mobile'
+import { useContext } from 'react'
+import { Cart } from '../../data/Cart'
+import { ItemContext } from '../../context/Itemcontext'
 import Image from 'next/image';
 
 function Theme(props) {
+
+    const ShownItem = useContext(ItemContext)
     const [baba, setBaba] = useState('hidden');
-    const [phone, setPhone] = useState(mobile.Apple.model[props.model?.split('-').join(' ')]?.back);
-    const [skin, setSkin] = useState(mobile.Apple.model[props.model?.split('-').join(' ')]?.skin);
+    const [buyNow, setBuyNow] = useState('Buy Now');
+
     useEffect(() => {
-        setPhone(mobile.Apple.model[props.model?.split('-').join(' ')]?.back); setSkin(mobile.Apple.model[props.model?.split('-').join(' ')]?.skin)
+        ShownItem.setPhone(mobile.Apple.model[props.model?.split('-').join(' ')]?.back); ShownItem.setSkin(mobile.Apple.model[props.model?.split('-').join(' ')]?.skin)
     }, [props.model]);
-    const [image, setImage] = useState('');
 
     // console.log(mobile.Apple.model[props.model?.split('-').join(' ')]?.skin)
     // console.log(props.model?.split('-').join(' '))
     return (
         <div className=' md:flex bg-gray-200  p-4'>
 
-            <ItemComponent image={image} phone={phone} skin={skin} />
+            <ItemComponent image={ShownItem.image} phone={ShownItem.phone} skin={ShownItem.skin} />
             <div>
                 <div>
                     {
@@ -36,8 +40,8 @@ function Theme(props) {
                                                         return (
                                                             <div key={index2} className={baba === mobi ? '' : 'hidden'}>
                                                                 <p onClick={() => {
-                                                                    setPhone(mobile[mobi].model[mobi2].back)
-                                                                    setSkin(mobile[mobi].model[mobi2].skin)
+                                                                    ShownItem.setPhone(mobile[mobi].model[mobi2].back)
+                                                                    ShownItem.setSkin(mobile[mobi].model[mobi2].skin)
                                                                 }} className='bg-gray-400 cursor-pointer'>{mobile[mobi].model[mobi2].name}</p>
                                                             </div>
                                                         )
@@ -66,7 +70,7 @@ function Theme(props) {
                                                 theme[item].map((item, index) => {
                                                     return (
                                                         <div className='w-[50px] ' key={index}>
-                                                            <Image src={item.URL} alt="" onClick={() => setImage(item.URL)} height={50} width={50} />
+                                                            <Image src={item.URL} alt="" onClick={() => ShownItem.setImage(item.URL)} height={50} width={50} />
                                                         </div>
                                                     )
                                                 })
@@ -78,13 +82,32 @@ function Theme(props) {
                         }
                     </div>
                 </div>
-            </div>
-            <button className='mx-4 px-4 bg-green-500 max-h-[25px] items-center' onClick={() => {
-                console.log(image)
-                console.log(phone)
-                console.log(skin)
-            }}>hello </button>
+                <div className='mt-1 grid grid-cols-2 gap-5'>
 
+                    <div>
+                        <h1 className='px-3 py-1 bg-gray-300 cursor-pointer w-[200px]' onClick={() => {
+                            localStorage.setItem('cart', JSON.stringify(Cart.items.push({
+                                ShownItem
+                            }
+                            )))
+                                ; console.log(Cart.items)
+                        }}>Add to Cart</h1>
+                    </div>
+                    <div>
+                        <h1 className='px-3 py-1 bg-gray-300 hover:bg-green-500 cursor-pointer w-[200px]'
+                            onClick={() => {
+
+                                localStorage.setItem('cart', JSON.stringify(Cart.items.push({
+                                    ShownItem
+                                }
+                                )))
+                                    ; console.log(Cart.items)
+                                setBuyNow('Purchased')
+
+                            }}>{buyNow}</h1>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
