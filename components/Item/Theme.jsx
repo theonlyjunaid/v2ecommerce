@@ -82,18 +82,19 @@ function Theme(props) {
                         }
                     </div>
                 </div>
-                <div className='mt-1 grid grid-cols-2 gap-5'>
+                <div className='mt-1  gap-5'>
 
                     <div>
-                        <h1 className='px-3 py-1 bg-gray-300 cursor-pointer w-[200px]' onClick={() => {
+                        <h1 className='px-3 py-1 bg-gray-300 cursor-pointer text-center' onClick={() => {
                             localStorage.setItem('cart', JSON.stringify(Cart.items.push({
                                 ShownItem
                             }
                             )))
-                                ; console.log(Cart.items)
-                        }}>Add to Cart</h1>
+                                ; console.log(Cart.items);
+                            ShownItem.setCart((Cart.items.length))
+                        }}>Add to Bag</h1>
                     </div>
-                    <div>
+                    {/* <div>
                         <h1 className='px-3 py-1 bg-gray-300 hover:bg-green-500 cursor-pointer w-[200px]'
                             onClick={() => {
 
@@ -105,7 +106,7 @@ function Theme(props) {
                                 setBuyNow('Purchased')
 
                             }}>{buyNow}</h1>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>

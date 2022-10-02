@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import { brands, categories } from '../data/navbar';
 import Link from 'next/link';
-
+import { useContext } from 'react'
+import { ItemContext } from '../context/Itemcontext';
 
 
 function Navbar() {
-
+    const ShownItem = useContext(ItemContext)
     const trending = Object.entries(categories).slice(0, 4)
     const trendingCategory = Object.entries(categories).slice(0, 7)
     const trendingCategory1 = Object.entries(categories)
@@ -142,7 +143,8 @@ function Navbar() {
                 <div className='grid grid-cols-3 gap-5  text-xl'>
                     {/* <i className='bx bx-search'></i> */}
                     <i className='bx bx-user hidden md:flex'></i>
-                    <i className='bx bx-cart-alt hidden md:flex' ></i>
+
+                    <Link href="/cart"><a ><i className='bx bx-cart-alt hidden md:flex' >{ShownItem.cart}</i></a></Link> <div> </div>
                 </div>
             </nav >
             <div className={`px-[35%] -mt-[12vh] md:mt-0 divide-y md:divide-y-0 absolute z-20 grid grid-cols-1 md:grid-cols-4 gap-6 p-8 md:px-[11%] w-full text-white text-sm  ${isHover} md:bg-black`}

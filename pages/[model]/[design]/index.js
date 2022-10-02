@@ -4,9 +4,9 @@ import { useRouter } from 'next/router'
 import Theme from '../../../components/Item/Theme'
 import Navbar from '../../../components/Navbar'
 import { Cart } from '../../../data/Cart'
-import Carte from '../../../components/Carte'
-import { useContext } from 'react'
-import { ItemContext } from '../../../context/Itemcontext'
+
+// import { useContext } from 'react'
+// import { ItemContext } from '../../../context/Itemcontext'
 export default function Slug() {
 
     const { query } = useRouter()
@@ -23,7 +23,7 @@ export default function Slug() {
             <Navbar />
             <Theme model={query.Design} />
             <div>
-                <Carte />
+                {/* <Carte /> */}
             </div>
 
         </div>
