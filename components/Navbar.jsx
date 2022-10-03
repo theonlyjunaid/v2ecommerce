@@ -31,12 +31,12 @@ function Navbar() {
         }
     }
     return (
-        <div className=''
-        // onMouseLeave={() => {
-        //     setIsHover("hidden")
-        //     setIsHover2("hidden")
-        //     setIsHover3("hidden")
-        // }}
+        <div className='sticky top-0 left-0 w-full z-50'
+            onMouseLeave={() => {
+                setIsHover("hidden")
+                setIsHover2("hidden")
+                setIsHover3("hidden")
+            }}
         >
             <nav className='md:flex justify-between md:px-4 lg:px-8 items-center py-3 bg-black text-white border-b border-gray-300 font-mono'>
                 <div className='flex justify-between items-center'>
@@ -47,7 +47,7 @@ function Navbar() {
                         <Link href="/"><a > <h1 className='md-ml-2 lg:ml-5'>wrap</h1></a></Link>
                     </div>
                     <div className=' md:hidden text-4xl'>
-                        <i className='bx bx-cart-alt pr-2  font-base' ></i>
+                        <Link href="/cart"><a >   <i className='bx bx-cart-alt pr-2  font-base' ></i></a></Link>
                     </div>
                 </div>
                 <div className={`text-center md:flex text-lg  lg:text-base xl:text-xl font-semib md:items-center ${isHover3 === "menu" ? "" : "hidden"} `}>
@@ -79,7 +79,7 @@ function Navbar() {
                                             <ul className='divide-y'>
                                                 {Object.keys(brands[brand].model).map((model, index) => {
                                                     return (
-                                                        <li className='py-2 hover:font-semibold cursor-pointer' key={index}>{brands[brand].name + " " + brands[brand].model[model].name}</li>
+                                                        <Link href={"/" + "Item" + "/" + brands[brand].model[model].name.split(" ").join("-").toLowerCase()}><a > <li className='py-2 hover:font-semibold cursor-pointer' key={index}>{brands[brand].name + " " + brands[brand].model[model].name}</li></a></Link>
                                                     )
                                                 })}
 

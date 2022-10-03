@@ -87,7 +87,7 @@ function Theme(props) {
                     <div>
                         <h1 className='px-3 py-1 bg-gray-300 cursor-pointer text-center' onClick={() => {
                             localStorage.setItem('cart', JSON.stringify(Cart.items.push({
-                                ShownItem
+                                'image': ShownItem.image, 'phone': ShownItem.phone, 'skin': ShownItem.skin
                             }
                             )))
                                 ; console.log(Cart.items);
@@ -109,7 +109,7 @@ function Theme(props) {
                     </div> */}
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 
