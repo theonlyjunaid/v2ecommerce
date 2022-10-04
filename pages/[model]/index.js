@@ -1,7 +1,7 @@
 import React from 'react'
 // import { useRouter } from 'next/router'
 import Navbar from '../../components/Navbar'
-import { mobile } from '../../data/mobile'
+import { mobile } from '../../data/mobilee'
 import Populated from '../../components/PopulatedItem/Populated'
 import { theme } from '../../data/design'
 
@@ -25,7 +25,7 @@ function index() {
                                     theme[item].map((item, index) => {
                                         return (
                                             <div key={index + 'jadi'} className=''>
-                                                <Populated image={item.URL} phone={mobile.Samsung?.model['S20 Ultra'].back} skin={mobile.Samsung?.model['S20 Ultra'].skin} />
+                                                <Populated image={item.URL} phone={mobile.Samsung?.model['S22 Ultra'].back} skin={mobile.Samsung?.model['S20 Ultra'].skin} />
                                             </div>
                                         )
                                     })
