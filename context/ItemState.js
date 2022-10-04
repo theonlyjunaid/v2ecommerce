@@ -1,9 +1,10 @@
 import { ItemContext } from "./Itemcontext";
 import { useContext, useState } from "react";
 import { Cart } from "../data/Cart";
-import { mobile } from "../data/mobile";
-export const ItemState = (props) => {
+import { mobile } from "../data/mobilee";
 
+export const ItemState = (props) => {
+    console.log(mobile.Apple.model["iphone 14 pro max"].skin.green);
     // const initialState = {
     //     items: [
     //         { id: 1, name: "Bread", price: 50 },
@@ -14,9 +15,8 @@ export const ItemState = (props) => {
     // }
 
     // const [state, setState] = useState(initialState);
-    const [phone, setPhone] = useState(mobile.Apple.model[props.model?.split('-').join(' ')]?.back);
-    const [skin, setSkin] = useState(mobile.Apple.model[props.model?.split('-').join(' ')]?.skin);
-    const [image, setImage] = useState('');
+    const [phone, setPhone] = useState(mobile.Apple.model["iphone 14 pro max"].skin.plain);
+    const [skin, setSkin] = useState(mobile.Apple.model["iphone 14 pro max"].skin.plain);
     const [cart, setCart] = useState(Cart.items.length === 0 ? [] : Cart.items.length);
 
     // const [state, dispatch] = useReducer(ItemReducer, initialState);
@@ -38,7 +38,7 @@ export const ItemState = (props) => {
 
     return (
         <ItemContext.Provider
-            value={{ phone, setPhone, skin, setSkin, image, setImage, cart, setCart }}
+            value={{ phone, setPhone, skin, setSkin, cart, setCart }}
         >
             {props.children}
         </ItemContext.Provider>
