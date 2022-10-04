@@ -79,7 +79,7 @@ function Navbar() {
                                             <ul className='divide-y'>
                                                 {Object.keys(brands[brand].model).map((model, index) => {
                                                     return (
-                                                        <Link href={"/" + "Item" + "/" + brands[brand].model[model].name.split(" ").join("-").toLowerCase()}><a > <li className='py-2 hover:font-semibold cursor-pointer' key={index}>{brands[brand].name + " " + brands[brand].model[model].name}</li></a></Link>
+                                                        <Link key={index} href={"/" + "Item" + "/" + brands[brand].model[model].name.split(" ").join("-").toLowerCase()}><a > <li className='py-2 hover:font-semibold cursor-pointer' key={index}>{brands[brand].name + " " + brands[brand].model[model].name}</li></a></Link>
                                                     )
                                                 })}
 
