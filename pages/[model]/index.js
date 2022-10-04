@@ -6,7 +6,7 @@ import { useRouter } from 'next/router'
 
 function Index() {
     const router = useRouter();
-    const [rola, setRola] = useState('apple')
+    const [rola, setRola] = useState('')
     useEffect(() => {
         if (!router.isReady) return;
         setRola(router.query.Model)
@@ -16,7 +16,7 @@ function Index() {
             <Navbar />
             <div className='flex justify-around mt-10'>
                 {
-                    Object.keys(mobile[rola]?.model).map((item, index) => {
+                    rola && Object.keys(mobile[rola]?.model).map((item, index) => {
                         return (
                             <Link href={`/${rola}/${item.toLocaleLowerCase().split(" ").join("-")}`} key={index}><a >
                                 <div>
