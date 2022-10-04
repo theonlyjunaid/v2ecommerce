@@ -1,5 +1,5 @@
 export const mobile = {
-    'Apple': {
+    'apple': {
         name: 'Apple',
         model: {
             'iphone 14 pro max': {
@@ -20,10 +20,10 @@ export const mobile = {
             },
         }
     },
-    'Samsung': {
+    'samsung': {
         name: 'Samsung',
         model: {
-            'S22 Ultra': {
+            's22 ultra': {
                 name: 'S22 Ultra',
                 skin: {
                     plain: '/mobile/skin/Samsung/s22series/s22ultra/plain.png',
@@ -32,7 +32,7 @@ export const mobile = {
                 }
 
             },
-            'Note 22 Ultra': {
+            'note 22 ultra': {
                 name: 'Note 22 Ultra',
                 skin: {
                     plain: '/mobile/skin/Samsung/note22series/note22ultra/plain.png',

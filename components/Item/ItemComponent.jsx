@@ -8,7 +8,7 @@ export default function ItemComponent(props) {
 
     return (
         <>
-            <div>
+            <div className='w-[550px] h-[700px]'>
                 <img src={props.skin} alt="" className='w-[480px]' />
             </div>
             {/* <div>

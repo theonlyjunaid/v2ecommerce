@@ -6,6 +6,7 @@ import { useContext } from 'react'
 import { Cart } from '../../data/Cart'
 import { ItemContext } from '../../context/Itemcontext'
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 function Theme(props) {
 
@@ -16,6 +17,8 @@ function Theme(props) {
     useEffect(() => {
         setSkine(ShownItem.skin.plain)
     }, [ShownItem.skin.plain]);
+    const router = useRouter()
+    console.log(router.query.Itemview)
     // console.log(skine)
     // useEffect(() => {
     //     ShownItem.setPhone(mobile.Apple.model[props.model?.split('-').join(' ')]?.back); ShownItem.setSkin(mobile.Apple.model[props.model?.split('-').join(' ')]?.skin)
@@ -30,7 +33,7 @@ function Theme(props) {
                 // image={ShownItem.image} phone={ShownItem.phone}
                 skin={skine} />
             <div>
-                <div>
+                {/* <div>
                     {
                         Object.keys(mobile).map((mobi, index) => {
 
@@ -61,7 +64,7 @@ function Theme(props) {
                         )
                     }
 
-                </div>
+                </div> */}
                 <div className='border border-black max-h-[300px] overflow-y-scroll'>
                     <h1 className='text-3xl  font-semibold mx-2'>Customize Skin</h1>
                     <div className=''>

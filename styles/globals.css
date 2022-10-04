@@ -3,15 +3,3 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap');
-
-ul li:hover {
-    font-weight: 300;
-}
-
-
-.goga {
-
-    background-image: url(https://www.bajajfinserv.in/5_mobiles_under_Rs.20,000_that_you_buy_on_BF_EMI_store_banner_Samsung-Galaxy-M31_CP-top-banner_Desktop_790x345.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-}
