@@ -12,8 +12,8 @@ function Index({ mobile }) {
     const [design, setDesign] = useState('iphone 14')
     useEffect(() => {
         if (!router.isReady) return;
-        setRola(router.query.Model)
-        setDesign(router.query.Design.split("-").join(" "))
+        setRola(router.query.model)
+        setDesign(router.query.design?.split("-").join(" "))
 
     }, [router.query]);
     // console.log(mobile)

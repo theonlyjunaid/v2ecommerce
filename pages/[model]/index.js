@@ -17,9 +17,10 @@ function Index({ mobile }) {
     const [rola, setRola] = useState('')
     useEffect(() => {
         if (!router.isReady) return;
-        setRola(router.query.Model)
+        setRola(router.query.model)
     }, [router.isReady]);
     console.log(mobile)
+    console.log(rola)
     return (
         <div>
             <Navbar />
