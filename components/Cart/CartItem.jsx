@@ -4,19 +4,20 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 function CartItem() {
+    console.log(Cart)
     return (
         <div className='md:flex mt-10 justify-center'>
             <div className='  w-[80%] xl:max-w-[800px] mx-10 '>
                 <div className='text-3xl mt-1 mb-5'>Bag</div>
                 {(Cart.items).map((item, index) => {
-                    console.log(item[3])
+                    // console.log(item[3])
                     return (
                         <div key={index} className='flex items-center border-b-2 py-[24px]'>
-                            <div className='w-[150px] h-[150px] border rounded-lg border-black flex items-center'>
-                                <img src={item.phone} alt="Cinque Terre" className='scale-[110%]' />
+                            <div className='w-[150px] h-[150px] border rounded-lg border-black flex justify-center items-center'>
+                                <img src={item.image} alt="Cinque Terre" className='h-[130px]' />
                             </div>
                             <div className='md:text-xl ml-3 md:ml-10 '>
-                                <p className='font-mono flex items-center'>iPhone 12 - Black Fluid <img src={item.image} alt="" width={30} className='mx-1' /></p>
+                                <p className='font-mono flex items-center'>iPhone 12 - Black Fluid </p>
                                 <p className='font-thin text-gray-400 my-[5px]'>Dark Collection</p>
                                 <p className='font-thin text-gray-400 my-[5px]'>Dark Collection</p>
                                 <p className='font-mono'>Quantity - 1</p>

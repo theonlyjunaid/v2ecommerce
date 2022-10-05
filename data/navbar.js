@@ -52,8 +52,8 @@ export const brands = {
                 price: 700,
                 image: 'https://www.gizmochina.com/wp-content/uploads/2020/02/Samsung-Galaxy-S20-Plus-1.jpg'
             },
-            S20Ultra: {
-                name: 'S20 Ultra',
+            S22Ultra: {
+                name: 'S22 Ultra',
                 price: 800,
                 image: 'https://www.gizmochina.com/wp-content/uploads/2020/02/Samsung-Galaxy-S20-Ultra-1.jpg'
             },
@@ -76,34 +76,24 @@ export const brands = {
         model: {
             iPhone12: {
                 name: 'iPhone 12',
-                price: 700,
-                image: 'https://www.gizmochina.com/wp-content/uploads/2020/10/Apple-iPhone-12-1.jpg'
+
             },
             iPhone12Pro: {
                 name: 'iPhone 12 Pro',
-                price: 800,
-                image: 'https://www.gizmochina.com/wp-content/uploads/2020/10/Apple-iPhone-12-Pro-1.jpg'
+
             },
             iPhone12ProMax: {
                 name: 'iPhone 12 Pro Max',
-                price: 900,
 
-                image: 'https://www.gizmochina.com/wp-content/uploads/2020/10/Apple-iPhone-12-Pro-Max-1.jpg'
             },
-            iPhone13: {
-                name: 'iPhone 13',
-                price: 800,
-                image: 'https://www.gizmochina.com/wp-content/uploads/2021/09/Apple-iPhone-13-1.jpg'
+            iPhone14: {
+                name: 'iPhone 14',
             },
-            iPhone13Pro: {
-                name: 'iPhone 13 Pro',
-                price: 900,
-                image: 'https://www.gizmochina.com/wp-content/uploads/2021/09/Apple-iPhone-13-Pro-1.jpg'
+            iPhone14Pro: {
+                name: 'iPhone 14 Pro',
             },
-            iPhone13ProMax: {
-                name: 'iPhone 13 Pro Max',
-                price: 1000,
-                image: '/Item/iphone-13-pro-max'
+            iPhone14ProMax: {
+                name: 'iPhone 14 Pro Max',
             }
         }
     },

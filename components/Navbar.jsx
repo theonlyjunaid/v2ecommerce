@@ -170,7 +170,7 @@ function Navbar() {
                                     {Object.keys(brands[brand].model).map((model, index) => {
                                         // console.log(brands[brand].model[model].name.split(" ").join("-").toLowerCase())
                                         return (
-                                            <li key={index}> <Link className='py-2 hover:font-semibold cursor-pointer' key={index} href={"/" + "Item" + "/" + brands[brand].model[model].name.split(" ").join("-").toLowerCase()}><a >{brands[brand].name + " " + brands[brand].model[model].name}</a></Link></li>
+                                            <li key={index}> <Link className='py-2 hover:font-semibold cursor-pointer' key={index} href={"/" + brands[brand].name.toLowerCase() + "/" + brands[brand].model[model].name.split(" ").join("-").toLowerCase() + "/"}><a >{brands[brand].name + " " + brands[brand].model[model].name}</a></Link></li>
                                         )
                                     })}
 

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import Navbar from '../../../components/Navbar'
 import { mobile } from '../../../data/mobilee'
+import Link from 'next/link'
 
 function Index() {
     const router = useRouter();
@@ -20,12 +21,15 @@ function Index() {
                 {
                     design && Object.keys(mobile[rola]?.model[design]?.skin).map((item, index) => {
                         console.log(item)
+                        console.log(mobile[rola].name.toLowerCase().split(" ").join("-") + "/" + design.toLocaleLowerCase().split(" ").join("-") + "/" + item.toLocaleLowerCase().split(" ").join("-"))
+                        let destination = "/" + mobile[rola].name.toLowerCase().split(" ").join("-") + "/" + design.toLocaleLowerCase().split(" ").join("-") + "/" + item.toLocaleLowerCase().split(" ").join("-")
                         let jadu = mobile[rola]?.model[design]?.skin;
                         return (
-                            <div className='flex justify-around mt-10' key={index}>
+                            <Link href={destination}><a> <div className='flex justify-around mt-10' key={index}>
 
                                 <img src={jadu[item]} alt="" className='w-[280px]' />
                             </div>
+                            </a></Link>
                         )
                     })
                 }</div>
