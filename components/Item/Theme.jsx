@@ -13,9 +13,10 @@ function Theme(props) {
         setSkine(props.mobile[props.model]?.model[props.design.split("-").join(" ")]?.skin[props.itemview])
     }, [props.query]);
     // console.log(ShownItem)
+    console.log(skine)
     // console.log(props.design?.split("-").join(" "))
     // console.log(props.mobile[props.model]?.model[props.design.split("-").join(" ")].skin[props.itemview])
-    console.log(props)
+    // console.log(props)
     return (
         <div className=' md:flex bg-gray-200  p-4'>
             <ItemComponent
