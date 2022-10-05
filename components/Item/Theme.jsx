@@ -8,9 +8,9 @@ import { ItemContext } from '../../context/Itemcontext'
 function Theme(props) {
     const ShownItem = useContext(ItemContext)
     const [baba, setBaba] = useState('hidden');
-    const [skine, setSkine] = useState(props.mobile[props.model]?.model[props.design.split("-").join(" ")].skin[props.itemview]);
+    const [skine, setSkine] = useState(props.mobile[props.model]?.model[props.design.split("-").join(" ")]?.skin[props.itemview]);
     useEffect(() => {
-        setSkine(props.mobile[props.model]?.model[props.design.split("-").join(" ")].skin[props.itemview])
+        setSkine(props.mobile[props.model]?.model[props.design.split("-").join(" ")]?.skin[props.itemview])
     }, [props.query]);
     // console.log(ShownItem)
     // console.log(props.design?.split("-").join(" "))

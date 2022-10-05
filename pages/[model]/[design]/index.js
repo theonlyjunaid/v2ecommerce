@@ -43,7 +43,7 @@ function Index({ mobile }) {
 export default Index
 
 export async function getServerSideProps(context) {
-    const res = await fetch('https://v2ecommerce.vercel.app/api/mobile')
+    const res = await fetch(`${process.env.BABLU_MERA_BHAI}`)
     const mobile = await res.json()
     return {
         props: {

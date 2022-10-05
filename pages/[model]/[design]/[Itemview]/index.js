@@ -5,7 +5,7 @@ import Navbar from '../../../../components/Navbar'
 import { Cart } from '../../../../data/Cart'
 
 export default function Slug({ mobile }) {
-
+    console.log(mobile)
     const { query } = useRouter()
     // console.log(query.Model + "-" + query.Design + "-" + query.Itemview)
     if (typeof window !== 'undefined') {
@@ -20,7 +20,7 @@ export default function Slug({ mobile }) {
     )
 }
 export async function getServerSideProps(context) {
-    const res = await fetch('https://v2ecommerce.vercel.app/api/mobile')
+    const res = await fetch(`${process.env.BABLU_MERA_BHAI}`)
     const mobile = await res.json()
     return {
         props: {
