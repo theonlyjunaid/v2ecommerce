@@ -4,18 +4,27 @@ import Theme from '../../../../components/Item/Theme'
 import Navbar from '../../../../components/Navbar'
 import { Cart } from '../../../../data/Cart'
 
-export default function Slug() {
+export default function Slug({ mobile }) {
 
     const { query } = useRouter()
-    console.log(query.Model + "-" + query.Design + "-" + query.Itemview)
+    // console.log(query.Model + "-" + query.Design + "-" + query.Itemview)
     if (typeof window !== 'undefined') {
         localStorage.setItem('cart', JSON.stringify(Cart.items))
     }
     return (
         <div>
             <Navbar />
-            <Theme model={query.Model} design={query.Design} itemview={query.Itemview} query={query} />
+            <Theme mobile={mobile} model={query.Model} design={query.Design} itemview={query.Itemview} query={query} />
 
         </div>
     )
+}
+export async function getServerSideProps(context) {
+    const res = await fetch('http://localhost:3000/api/mobile')
+    const mobile = await res.json()
+    return {
+        props: {
+            mobile
+        }
+    }
 }

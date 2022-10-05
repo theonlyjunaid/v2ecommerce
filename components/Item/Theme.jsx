@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from 'react'
 import ItemComponent from './ItemComponent'
 import { theme } from '../../data/design'
-import { mobile } from '../../data/mobilee'
+// import { mobile } from '../../pages/api/mobile'
 import { useContext } from 'react'
 import { Cart } from '../../data/Cart'
 import { ItemContext } from '../../context/Itemcontext'
 function Theme(props) {
     const ShownItem = useContext(ItemContext)
     const [baba, setBaba] = useState('hidden');
-    const [skine, setSkine] = useState(mobile[props.model]?.model[props.design.split("-").join(" ")].skin[props.itemview]);
+    const [skine, setSkine] = useState(props.mobile[props.model]?.model[props.design.split("-").join(" ")].skin[props.itemview]);
     useEffect(() => {
-        setSkine(mobile[props.model]?.model[props.design.split("-").join(" ")].skin[props.itemview])
+        setSkine(props.mobile[props.model]?.model[props.design.split("-").join(" ")].skin[props.itemview])
     }, [props.query]);
     // console.log(ShownItem)
     // console.log(props.design?.split("-").join(" "))
-    console.log(mobile[props.model]?.model[props.design.split("-").join(" ")].skin[props.itemview])
+    // console.log(props.mobile[props.model]?.model[props.design.split("-").join(" ")].skin[props.itemview])
 
     return (
         <div className=' md:flex bg-gray-200  p-4'>
