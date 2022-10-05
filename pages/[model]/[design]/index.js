@@ -25,7 +25,7 @@ function Index() {
                         let destination = "/" + mobile[rola].name.toLowerCase().split(" ").join("-") + "/" + design.toLocaleLowerCase().split(" ").join("-") + "/" + item.toLocaleLowerCase().split(" ").join("-")
                         let jadu = mobile[rola]?.model[design]?.skin;
                         return (
-                            <Link href={destination}><a> <div className='flex justify-around mt-10' key={index}>
+                            <Link href={destination} key={index + jadu[item]}><a> <div className='flex justify-around mt-10'>
 
                                 <img src={jadu[item]} alt="" className='w-[280px]' />
                             </div>
