@@ -22,7 +22,7 @@ function Theme(props) {
             <ItemComponent
                 skin={skine} />
             <div>
-                {/* <div>
+                <div>
                     {
                         Object.keys(mobile).map((mobi, index) => {
                             return (
@@ -51,7 +51,7 @@ function Theme(props) {
                         }
                         )
                     }
-                </div> */}
+                </div>
                 <div className='border border-black max-h-[300px] overflow-y-scroll'>
                     <h1 className='text-3xl  font-semibold mx-2'>Customize Skin</h1>
                     <div className=''>
