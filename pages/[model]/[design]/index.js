@@ -6,14 +6,15 @@ import Link from 'next/link'
 
 function Index() {
     const router = useRouter();
-    const [rola, setRola] = useState('')
-    const [design, setDesign] = useState('')
+    const [rola, setRola] = useState('apple')
+    const [design, setDesign] = useState('iphone 14')
     useEffect(() => {
         if (!router.isReady) return;
         setRola(router.query.Model)
         setDesign(router.query.Design.split("-").join(" "))
 
-    }, [router.isReady]);
+    }, [router.query]);
+    console.log(rola)
     return (
         <div>
             <Navbar />
