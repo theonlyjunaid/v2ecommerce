@@ -24,7 +24,7 @@ function Theme(props) {
             <div>
                 <div>
                     {
-                        Object.keys(mobile).map((mobi, index) => {
+                        Object.keys(props.mobile).map((mobi, index) => {
                             return (
                                 <div key={index} className='flex'>
                                     <div>
@@ -33,12 +33,14 @@ function Theme(props) {
 
                                             <div>
                                                 {
-                                                    Object.keys(mobile[mobi].model).map((mobi2, index2) => {
+                                                    Object.keys(props.mobile[mobi].model).map((mobi2, index2) => {
+
                                                         return (
                                                             <div key={index2} className={baba === mobi ? '' : 'hidden'}>
                                                                 <p onClick={() => {
-                                                                    ShownItem.setSkin(mobile[mobi].model[mobi2].skin)
-                                                                }} className='bg-gray-400 cursor-pointer'>{mobile[mobi].model[mobi2].name}</p>
+                                                                    setSkine(props.mobile[mobi].model[mobi2].skin.plain);
+                                                                    console.log(props.mobile[mobi].model[mobi2].skin.plain)
+                                                                }} className='bg-gray-400 cursor-pointer'>{props.mobile[mobi].model[mobi2].name}</p>
                                                             </div>
                                                         )
                                                     })
