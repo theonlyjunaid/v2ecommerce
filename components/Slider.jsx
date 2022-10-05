@@ -45,10 +45,10 @@ const FeaturedPosts = () => {
     );
 
     return (
-        <div className="mb-8  text-center  w-full">
+        <div className="hidden md:block mb-8  text-center  w-full">
             <Carousel infinite customLeftArrow={customLeftArrow} customRightArrow={customRightArrow} responsive={responsive} itemclassName="px-4">
                 <div style={{ backgroundImage: "url(sale/1.png)" }} className='h-[720px] bg-cover'>
-                    <div className='text-6xl text-left absolute right-[15%]  items-center align-middle top-[40%]'>
+                    <div className='text-xl md:text-6xl text-left absolute right-[15%]  items-center align-middle top-[40%]'>
                         <h2>Now Its Your Turn </h2>
                         <h2>To <button className='bg-[#bcffbc] px-3 py-1 rounded-xl' onClick={() => ''}> Convert</button></h2>
                     </div>
