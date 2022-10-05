@@ -20,7 +20,7 @@ export default function Slug({ mobile }) {
     )
 }
 export async function getServerSideProps(context) {
-    const res = await fetch('http://localhost:3000/api/mobile')
+    const res = await fetch('https://v2ecommerce.vercel.app/api/mobile')
     const mobile = await res.json()
     return {
         props: {
