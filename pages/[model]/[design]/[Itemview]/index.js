@@ -12,7 +12,7 @@ export default function Slug({ mobile }) {
     return (
         <div>
             <Navbar />
-            <Theme mobile={mobile} model={query.model} design={query.design} itemview={query.itemview} query={query} />
+            <Theme mobile={mobile} model={query.model} design={query.design} itemview={query.Itemview} query={query} />
 
         </div>
     )
