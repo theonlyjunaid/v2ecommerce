@@ -22,15 +22,16 @@ function Index({ mobile }) {
     console.log(mobile)
     console.log(rola)
     return (
-        <div>
+        <div className='bg-slate-900 h-screen'>
             <Navbar />
-            <div className='flex justify-around mt-10'>
+            <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 p-8 '>
                 {
                     rola && Object.keys(mobile[rola]?.model).map((item, index) => {
                         return (
                             <Link href={`/${rola}/${item?.toLocaleLowerCase().split(" ").join("-")}`} key={index}><a >
-                                <div>
-                                    <img src={mobile[rola]?.model[item]?.skin['plain']} alt="" className='w-[280px]' />
+                                <div className='bg-gray-500 grid grid-cols-1 gap-4 place-items-center  relative'>
+                                    <img src={mobile[rola]?.model[item]?.skin['plain']} alt="" className='w-[280px] relative -top-0' />
+                                    <div className='text-white text-2xl mb-5 hover:text-yellow-500'>{item}</div>
                                 </div>
                             </a>
                             </Link>

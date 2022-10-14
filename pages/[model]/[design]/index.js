@@ -18,9 +18,9 @@ function Index({ mobile }) {
     }, [router.query]);
     // console.log(mobile)
     return (
-        <div>
+        <div className='bg-slate-900 h-screen'>
             <Navbar />
-            <div className='flex'>
+            <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-10 gap-4 p-8'>
                 {
                     design && Object.keys(mobile[rola]?.model[design]?.skin).map((item, index) => {
                         // console.log(item)
@@ -28,9 +28,12 @@ function Index({ mobile }) {
                         let destination = "/" + mobile[rola].name.toLowerCase().split(" ").join("-") + "/" + design.toLocaleLowerCase().split(" ").join("-") + "/" + item.toLocaleLowerCase().split(" ").join("-")
                         let jadu = mobile[rola]?.model[design]?.skin;
                         return (
-                            <Link href={destination} key={index + jadu[item]}><a> <div className='flex justify-around mt-10'>
+                            <Link href={destination} key={index + jadu[item]}><a> <div className='grid grid-cols-1 place-items-center  bg-gray-400'>
 
                                 <img src={jadu[item]} alt="" className='w-[280px]' />
+                                <div className='text-white hover:text-yellow-400 text-lg sm:text-2xl my-2'>
+                                    {item.split("")[0].toUpperCase() + item.slice(1)}
+                                </div>
                             </div>
                             </a></Link>
                         )

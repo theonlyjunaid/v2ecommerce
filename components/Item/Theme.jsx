@@ -3,7 +3,7 @@ import ItemComponent from './ItemComponent'
 import { theme } from '../../data/design'
 // import { mobile } from '../../pages/api/mobile'
 import { useContext } from 'react'
-import { Cart } from '../../data/Cart'
+// import { Cart } from '../../data/Cart'
 import { ItemContext } from '../../context/Itemcontext'
 function Theme(props) {
     const ShownItem = useContext(ItemContext)
@@ -12,8 +12,30 @@ function Theme(props) {
     useEffect(() => {
         setSkine(props.mobile[props.model]?.model[props.design.split("-").join(" ")]?.skin[props.itemview])
     }, [props.query]);
+    const [task, setTask] = useState({
+        'image': skine, 'phone': skine?.split("/").splice(0, 6), 'skin': props.query, 'model': props.model, 'design': props.design, 'price': props.mobile[props.model]?.model[props.design.split("-").join(" ")]?.price
+    });
+    const [tasks, setTasks] = useState([]);
+    useEffect(() => {
+        if (localStorage.getItem("localTasks")) {
+            const storedList = JSON.parse(localStorage.getItem("localTasks"));
+            setTasks(storedList);
+        }
+    }, [])
+
+    const addTask = (e) => {
+        if (task) {
+            const newTask = {
+                'image': skine, 'phone': skine?.split("/").splice(0, 6), 'skin': props.query, 'model': props.model, 'design': props.design, 'price': props.mobile[props.model]?.model[props.design.split("-").join(" ")]?.price
+            };
+            setTasks([...tasks, newTask]);
+            localStorage.setItem("localTasks", JSON.stringify([...tasks, newTask]));
+
+        }
+    };
+
     // console.log(ShownItem)
-    console.log(skine + 1)
+    // console.log(skine + 1)
     // console.log(props.design?.split("-").join(" "))
     // console.log(props.mobile[props.model]?.model[props.design.split("-").join(" ")].skin[props.itemview])
     // console.log(props)
@@ -83,12 +105,14 @@ function Theme(props) {
                 <div className='mt-1  gap-5'>
                     <div>
                         <h1 className='px-3 py-1 bg-gray-300 cursor-pointer text-center' onClick={() => {
-                            localStorage.setItem('cart', Cart.items.push({
-                                'image': skine, 'phone': skine?.split("/").splice(0, 6), 'skin': ShownItem.skin
-                            }
-                            ))
-                                ; console.log(localStorage.getItem('cart'));
-                            ShownItem.setCart((Cart.items.length))
+                            addTask();
+                            console.log(tasks)
+                            // localStorage.setItem('cart', Cart.items.push({
+                            //     'image': skine, 'phone': skine?.split("/").splice(0, 6), 'skin': ShownItem.skin
+                            // }
+                            // ))
+                            //     ; console.log(localStorage.getItem('cart'));
+                            // ShownItem.setCart((Cart.items.length))
                         }}>Add to Bag</h1>
                     </div>
                 </div>

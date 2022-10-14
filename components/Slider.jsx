@@ -25,8 +25,21 @@ const responsive = {
     },
 };
 
-const FeaturedPosts = () => {
 
+const FeaturedPosts = () => {
+    const [windowsize, setWindowsize] = useState('');
+    // useEffect(() => {
+    //     if (typeof window !== 'undefined') {
+    //         if (window.innerWidth < 768) {
+    //             setWindowsize('mobile');
+    //         }
+    //         else {
+    //             setWindowsize('desktop');
+    //         }
+    //     }
+    //     conslone
+    // }
+    //     , [windowsize.innerWidth])
 
     const customLeftArrow = (
         <div className="absolute arrow-btn left-0 text-center py-3 cursor-pointer bg-pink-600 rounded-full">
@@ -45,15 +58,17 @@ const FeaturedPosts = () => {
     );
 
     return (
-        <div className="hidden md:block mb-8  text-center  w-full">
+        <div className=" mb-8  text-center  w-full">
             <Carousel infinite customLeftArrow={customLeftArrow} customRightArrow={customRightArrow} responsive={responsive} itemclassName="px-4">
-                <div style={{ backgroundImage: "url(sale/1.png)" }} className='h-[720px] bg-cover'>
-                    <div className='text-xl md:text-6xl text-left absolute right-[15%]  items-center align-middle top-[40%]'>
+
+                <div className="bg-[url('../public/sale/11.png')] md:bg-[url('../public/sale/1.png')] h-[720px] bg-cover">
+                    <div className="text-xl md:text-6xl text-left absolute right-[15%]  items-center align-middle top-[40%] ">
                         <h2>Now Its Your Turn </h2>
                         <h2>To <button className='bg-[#bcffbc] px-3 py-1 rounded-xl' onClick={() => ''}> Convert</button></h2>
                     </div>
                 </div>
-                <div style={{ backgroundImage: "url(sale/2.png)" }} className='h-[720px] bg-cover'>
+
+                <div className="bg-[url('../public/sale/12.png')] md:bg-[url('../public/sale/2.png')] h-[720px] bg-cover">
                     <div className='text-6xl text-left absolute left-[15%]  items-center align-middle top-[40%]'>
                         <h2>Now Its Your Turn </h2>
                         <h2>To <button className='bg-[#7d927d] px-3 py-1 rounded-xl' onClick={() => ''}> Convert</button></h2>
@@ -66,5 +81,7 @@ const FeaturedPosts = () => {
         </div>
     );
 };
+
+
 
 export default FeaturedPosts;

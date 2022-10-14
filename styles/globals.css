@@ -3,3 +3,14 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap');
+
+.one {
+    font-family: 'Chakra Petch', sans-serif;
+    background-image: url('../public/sale/1.png');
+}
+
+@media (max-width: 768px) {
+    .one {
+        background-image: url('../public/sale/1.png');
+    }
+}
