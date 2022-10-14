@@ -21,7 +21,7 @@ function Index({ mobile }) {
     return (
         <div className=''>
             <Navbar />
-            <div className='text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold p-4 sm:p-10'>{mobile[rola]?.model[design].name} Skins and Wraps</div>
+            <div className='flex justify-center sm:justify-start text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold p-4 sm:p-10'>{mobile[rola]?.model[design].name} Skins and Wraps</div>
             <div className='flex sm:text-xl md:text-2xl lg:text-3xl font-mono items-center px-4 sm:px-10 justify-center md:justify-start'><div className='hidden sm:flex'> Select Your Design or </div> <Link href={"/" + router.query.model + "/" + router.query.design + "/" + "plain"}><a><div className='font-semibold bg-yellow-300 px-3 sm:bg-gray-300 md:px-2 py-1 md:py-2 rounded-2xl ml-2 hover:bg-yellow-400'>Start the Customizer</div></a></Link></div>
             <div className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4  py-8 min-h-max'>
                 {
