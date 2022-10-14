@@ -3,6 +3,7 @@ import ItemComponent from './ItemComponent'
 import { theme } from '../../data/design'
 import { useContext } from 'react'
 import { ItemContext } from '../../context/Itemcontext'
+import Link from 'next/link'
 function Theme(props) {
     const ShownItem = useContext(ItemContext)
     const [baba, setBaba] = useState('hidden');
@@ -95,9 +96,10 @@ function Theme(props) {
                 </div>
                 <div className='mt-1  gap-5'>
                     <div>
-                        <h1 className='px-3 py-1 bg-gray-300 cursor-pointer text-center' onClick={() => {
+                        <Link href="/cart"><a >   <h1 className='px-3 py-1 bg-gray-300 cursor-pointer text-center' onClick={() => {
                             addTask();
                         }}>Add to Bag</h1>
+                        </a></Link>
                     </div>
                 </div>
             </div>
