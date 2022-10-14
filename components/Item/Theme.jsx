@@ -106,7 +106,7 @@ function Theme(props) {
                     <div>
                         <h1 className='px-3 py-1 bg-gray-300 cursor-pointer text-center' onClick={() => {
                             addTask();
-                            console.log(tasks)
+                            // console.log(tasks)
                             // localStorage.setItem('cart', Cart.items.push({
                             //     'image': skine, 'phone': skine?.split("/").splice(0, 6), 'skin': ShownItem.skin
                             // }
