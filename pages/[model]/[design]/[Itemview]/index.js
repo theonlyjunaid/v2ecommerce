@@ -5,13 +5,10 @@ import Navbar from '../../../../components/Navbar'
 import { Cart } from '../../../../data/Cart'
 
 export default function Slug({ mobile }) {
-    // console.log(mobile)
     const { query } = useRouter()
-    // console.log(query.Model + "-" + query.Design + "-" + query.Itemview)
     if (typeof window !== 'undefined') {
         localStorage.setItem('cart', JSON.stringify(Cart.items))
     }
-    // console.log(query)
     return (
         <div>
             <Navbar />
