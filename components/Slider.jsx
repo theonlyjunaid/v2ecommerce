@@ -61,14 +61,14 @@ const FeaturedPosts = () => {
         <div className=" mb-8  text-center  w-full">
             <Carousel infinite customLeftArrow={customLeftArrow} customRightArrow={customRightArrow} responsive={responsive} itemclassName="px-4">
 
-                <div className="bg-[url('../public/sale/11.png')] md:bg-[url('../public/sale/1.png')] h-[360px] md:h-[720px] bg-cover">
+                <div className="bg-[url('../public/sale/11.webp')] md:bg-[url('../public/sale/1.webp')] h-[360px] md:h-[720px] bg-cover">
                     <div className="text-xl md:text-6xl text-left hidden md:block md:absolute right-[15%]  items-center align-middle top-[40%] ">
                         <h2>Now Its Your Turn </h2>
                         <h2>To <button className='bg-[#bcffbc] px-3 py-1 rounded-xl' onClick={() => ''}> Convert</button></h2>
                     </div>
                 </div>
 
-                <div className="bg-[url('../public/sale/12.png')] md:bg-[url('../public/sale/2.png')] h-[360px] md:h-[720px] bg-cover">
+                <div className="bg-[url('../public/sale/12.webp')] md:bg-[url('../public/sale/2.webp')] h-[360px] md:h-[720px] bg-cover">
                     <div className='text-6xl text-left hidden md:block md:absolute left-[15%]  items-center align-middle top-[40%]'>
 
                         <h2>Now Its Your Turn </h2>
