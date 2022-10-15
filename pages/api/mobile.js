@@ -5,17 +5,17 @@
 //             'iphone 14 pro max': {
 //                 name: 'iPhone 14 Pro Max',
 //                 skin: {
-//                     plain: '/mobile/skin/Apple/14series/14promax/plain.png',
-//                     green: '/mobile/skin/Apple/14series/14promax/green.png',
-//                     gray: '/mobile/skin/Apple/14series/14promax/gray.png',
+//                     plain: '/mobile/skin/Apple/14series/14promax/plain.webp',
+//                     green: '/mobile/skin/Apple/14series/14promax/green.webp',
+//                     gray: '/mobile/skin/Apple/14series/14promax/gray.webp',
 //                 }
 //             },
 //             'iphone 14': {
 //                 name: 'iPhone 14',
 //                 skin: {
-//                     plain: '/mobile/skin/Apple/14series/14/plain.png',
-//                     green: '/mobile/skin/Apple/14series/14/green.png',
-//                     gray: '/mobile/skin/Apple/14series/14/gray.png',
+//                     plain: '/mobile/skin/Apple/14series/14/plain.webp',
+//                     green: '/mobile/skin/Apple/14series/14/green.webp',
+//                     gray: '/mobile/skin/Apple/14series/14/gray.webp',
 //                 }
 //             },
 //         }
@@ -26,18 +26,18 @@
 //             's22 ultra': {
 //                 name: 'S22 Ultra',
 //                 skin: {
-//                     plain: '/mobile/skin/Samsung/s22series/s22ultra/plain.png',
-//                     green: '/mobile/skin/Samsung/s22series/s22ultra/green.png',
-//                     gray: '/mobile/skin/Samsung/s22series/s22ultra/gray.png',
+//                     plain: '/mobile/skin/Samsung/s22series/s22ultra/plain.webp',
+//                     green: '/mobile/skin/Samsung/s22series/s22ultra/green.webp',
+//                     gray: '/mobile/skin/Samsung/s22series/s22ultra/gray.webp',
 //                 }
 
 //             },
 //             'note 20 ultra': {
 //                 name: 'Note 20 Ultra',
 //                 skin: {
-//                     plain: '/mobile/skin/Samsung/note22series/note22ultra/plain.png',
-//                     green: '/mobile/skin/Samsung/note22series/note22ultra/green.png',
-//                     gray: '/mobile/skin/Samsung/note22series/note22ultra/gray.png',
+//                     plain: '/mobile/skin/Samsung/note22series/note22ultra/plain.webp',
+//                     green: '/mobile/skin/Samsung/note22series/note22ultra/green.webp',
+//                     gray: '/mobile/skin/Samsung/note22series/note22ultra/gray.webp',
 //                 }
 
 //             },
@@ -52,17 +52,17 @@ export default function mobile(req, res) {
                 'iphone 14 pro max': {
                     name: 'iPhone 14 Pro Max',
                     skin: {
-                        plain: '/mobile/skin/Apple/14series/14promax/plain.png',
-                        green: '/mobile/skin/Apple/14series/14promax/green.png',
-                        gray: '/mobile/skin/Apple/14series/14promax/gray.png',
+                        plain: '/mobile/skin/Apple/14series/14promax/plain.webp',
+                        green: '/mobile/skin/Apple/14series/14promax/green.webp',
+                        gray: '/mobile/skin/Apple/14series/14promax/gray.webp',
                     }
                 },
                 'iphone 14': {
                     name: 'iPhone 14',
                     skin: {
-                        plain: '/mobile/skin/Apple/14series/14/plain.png',
-                        green: '/mobile/skin/Apple/14series/14/green.png',
-                        gray: '/mobile/skin/Apple/14series/14/gray.png',
+                        plain: '/mobile/skin/Apple/14series/14/plain.webp',
+                        green: '/mobile/skin/Apple/14series/14/green.webp',
+                        gray: '/mobile/skin/Apple/14series/14/gray.webp',
                     }
                 },
             }
@@ -73,18 +73,18 @@ export default function mobile(req, res) {
                 's22 ultra': {
                     name: 'S22 Ultra',
                     skin: {
-                        plain: '/mobile/skin/Samsung/s22series/s22ultra/plain.png',
-                        green: '/mobile/skin/Samsung/s22series/s22ultra/green.png',
-                        gray: '/mobile/skin/Samsung/s22series/s22ultra/gray.png',
+                        plain: '/mobile/skin/Samsung/s22series/s22ultra/plain.webp',
+                        green: '/mobile/skin/Samsung/s22series/s22ultra/green.webp',
+                        gray: '/mobile/skin/Samsung/s22series/s22ultra/gray.webp',
                     }
 
                 },
                 'note 20 ultra': {
                     name: 'Note 20 Ultra',
                     skin: {
-                        plain: '/mobile/skin/Samsung/note22series/note22ultra/plain.png',
-                        green: '/mobile/skin/Samsung/note22series/note22ultra/green.png',
-                        gray: '/mobile/skin/Samsung/note22series/note22ultra/gray.png',
+                        plain: '/mobile/skin/Samsung/note22series/note22ultra/plain.webp',
+                        green: '/mobile/skin/Samsung/note22series/note22ultra/green.webp',
+                        gray: '/mobile/skin/Samsung/note22series/note22ultra/gray.webp',
                     }
 
                 },
