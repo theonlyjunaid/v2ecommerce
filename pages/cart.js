@@ -35,6 +35,9 @@ function cart() {
                 name: "Junaid Malik",
                 email: "work@gmail.com",
                 contact: "9999999999",
+                Address: "G-13, Sector 3, Noida, UP, India",
+                Model: "iPhone 12 Pro Max",
+                Color: "Space Grey",
             },
         };
 
