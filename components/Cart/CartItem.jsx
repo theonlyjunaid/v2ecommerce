@@ -23,7 +23,8 @@ function CartItem() {
 
                 {
                     tasks.map((task, index) => {
-
+                        // when task image is not defined
+                        if (!task.image) return;
                         return (
                             <div key={index} className='flex items-center border-b-2 py-[24px]' >
                                 <div className='flex flex-col justify-center items-center relative w-[240px] h-[240px]'>
@@ -37,9 +38,9 @@ function CartItem() {
                                 <div>
                                     <div className='md:text-xl ml-3 md:ml-10 '>
                                         <p onClick={() => { handleDelete(task) }} className='bg-red-100 px-1 py-1 w-[80px] text-sm rounded-lg hover:bg-red-400 cursor-pointer'>delete me</p>
-                                        <p className='font-mono flex items-center'>{task?.skin?.design.split("-").join(" ")} </p>
-                                        <p className='font-thin text-gray-400 my-[5px]'>{task?.skin?.itemview}</p>
-                                        <p className='font-thin text-gray-400 my-[5px]'>{''}</p>
+                                        <p className='font-mono flex items-center'>{task?.name} </p>
+                                        <p className='font-thin text-gray-800 my-[5px]'>{task?.skin}</p>
+                                        <p className='font-thin text-gray-600 my-[5px]'>{task?.skinColor}</p>
                                         <p className='font-mono'>Quantity - 1</p>
                                         <div>
                                             <p className='font-mono'>Price - {task.price}</p>

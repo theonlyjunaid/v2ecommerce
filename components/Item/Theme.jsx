@@ -5,6 +5,7 @@ import { useContext } from 'react'
 import { ItemContext } from '../../context/Itemcontext'
 import Link from 'next/link'
 function Theme(props) {
+    console.log(props.mobile[props.model].name + " " + props.mobile[props.model].model[props.design.split("-").join(" ")].name)
     const ShownItem = useContext(ItemContext)
     const [baba, setBaba] = useState('hidden');
     const [skine, setSkine] = useState(props.mobile[props.model]?.model[props.design.split("-").join(" ")]?.skin[props.itemview]);
@@ -25,7 +26,7 @@ function Theme(props) {
     const addTask = (e) => {
         if (task) {
             const newTask = {
-                'image': skine, 'phone': skine?.split("/").splice(0, 6), 'skin': props.query, 'model': props.model, 'design': props.design, 'price': 249
+                'image': skine, 'name': props.mobile[props.model].name + " " + props.mobile[props.model].model[props.design.split("-").join(" ")].name, 'price': 249, skinColor: skine?.split("/").splice(6, 1).join("").split(".")[0]
             };
             setTasks([...tasks, newTask]);
             localStorage.setItem("localTasks", JSON.stringify([...tasks, newTask]));

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Navbar from '../../components/Navbar'
 // import { mobile } from '../../data/mobilee'
-import mobile from '../api/mobile'
+// import mobile from '../api/data/mobile'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import Navbar from '../../../components/Navbar'
 import Link from 'next/link'
-import mobile from '../../api/mobile'
+// import mobile from '../../api/data/mobile'
 
 function Index({ mobile }) {
     const router = useRouter();
