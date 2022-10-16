@@ -19,7 +19,7 @@ function cart() {
         console.log(data);
         var options = {
             key: process.env.RAZORPAY_API_KEY, // Enter the Key ID generated from the Dashboard
-            name: "Manu Arora Pvt Ltd",
+            name: "Junaid Malik",
             currency: data.currency,
             amount: data.amount,
             order_id: data.id,
@@ -32,8 +32,8 @@ function cart() {
                 alert(response.razorpay_signature);
             },
             prefill: {
-                name: "Manu Arora",
-                email: "manuarorawork@gmail.com",
+                name: "Junaid Malik",
+                email: "work@gmail.com",
                 contact: "9999999999",
             },
         };
