@@ -13,10 +13,12 @@
     "js-cookie": "^3.0.1",
     "mongoose": "^6.6.5",
     "next": "12.2.5",
+    "razorpay": "^2.8.3",
     "react": "18.2.0",
     "react-awesome-slider": "^4.1.0",
     "react-dom": "18.2.0",
     "react-multi-carousel": "^2.8.2",
+    "shortid": "^2.2.16",
     "swiper": "^8.3.2"
   },
   "devDependencies": {

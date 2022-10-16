@@ -3,7 +3,7 @@ import { Cart } from '../../data/Cart'
 import Image from 'next/image'
 import Link from 'next/link'
 
-function CartItem() {
+function CartItem({ item }) {
     const [tasks, setTasks] = useState([]);
     useEffect(() => {
         if (localStorage.getItem("localTasks")) {
@@ -74,7 +74,7 @@ function CartItem() {
                         <p className='font-mono'>{249 * tasks.length}</p>
                     </div>
                     <div>
-                        <Link href="/checkout"><a><button className='bg-black hover:bg-gray-800 text-white w-full py-5 mt-5 rounded-[40px]'>Checkout</button></a></Link>
+                        <Link href=""><a><button className='bg-black hover:bg-gray-800 text-white w-full py-5 mt-5 rounded-[40px]' onClick={item}>Checkout</button></a></Link>
                     </div>
                 </div>
             </div>
